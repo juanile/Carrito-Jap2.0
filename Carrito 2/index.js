@@ -1,18 +1,3 @@
-window.onload = function() {
-    var nombre = prompt("Por favor, ingrese su nombre:");
-    var rut = prompt("Por favor, ingrese su RUT:");
-    if (nombre === null || nombre === "") {
-        nombre = "Consumidor final"; // Establecer "Consumidor final" como valor predeterminado
-    }
-
-    // Mostrar el nombre en la página
-    var nombreElement = document.createElement("h3");
-    nombreElement.textContent = "Hola, " + nombre + ". ¡Bienvenido a ElectroTech!";
-    nombreElement.classList.add("text-center", "mt-3"); // Agregar clases Bootstrap para centrar y dar margen superior
-    document.body.insertBefore(nombreElement, document.body.firstChild);
-};
-
-
 
 // Lista de productos con sus datos (puedes modificar estos datos según tus necesidades)
 var productos = [
@@ -63,7 +48,7 @@ cell4.innerHTML = "$" + productoSeleccionado.precio;
 // Botón de eliminar
 var eliminarButton = document.createElement("button");
 eliminarButton.textContent = "Eliminar";
-eliminarButton.classList.add("btn", "btn-danger");
+eliminarButton.classList.add("btn", "btn-outline-danger");
 eliminarButton.onclick = function() {
     eliminarFila(newRow);
 };
@@ -110,3 +95,14 @@ function calcularImporteTotal() {
 
 }
 
+// Agrega un evento change al radio button para mostrar/ocultar el campo de RUT
+document.getElementById('flexRadioDefault1').addEventListener('change', function() {
+    document.getElementsByClassName("campoRut")[0].style.display = 'none';
+});
+
+document.getElementById('flexRadioDefault2').addEventListener('change', function() {
+    document.getElementsByClassName("campoRut")[0].style.display = 'block';
+});
+
+// Inicialmente oculta el campo de RUT
+document.getElementsByClassName("campoRut")[0].style.display = 'none';

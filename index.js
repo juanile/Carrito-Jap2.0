@@ -106,3 +106,4 @@ document.getElementById('flexRadioDefault2').addEventListener('change', function
 
 // Inicialmente oculta el campo de RUT
 document.getElementsByClassName("campoRut")[0].style.display = 'none';
+document.getElementById('flexRadioDefault2').checked = false;
